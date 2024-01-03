@@ -1,0 +1,56 @@
+
+
+PLOTTING P 
+
+config n=5
+
+fac.Config('i', '5s')
+
+fac.Config('d','5p2')
+fac.Config('d','5p 4f')
+fac.Config('d','5p 5d')
+fac.Config('d','5p 5f')
+fac.Config('d','5p 5g')
+
+
+
+
+fac.Config('f','5s2')
+
+fac.Config('f','5s 5p')
+fac.Config('f','5s 4f')
+fac.Config('f','5s 5d')
+fac.Config('f','5s 5f')
+fac.Config('f','5s 5g')
+
+
+fac.Config('f','4d 5p')
+fac.Config('f','4d 4f')
+fac.Config('f','4d 5d')
+fac.Config('f','4d 5f')
+fac.Config('f','4d 5g')
+
+
+
+config n>5
+
+
+
+catch_shell=7
+fac.Config('d','5p1 %s*1'%(catch_shell))
+
+#rad decay of the free electron 
+fac.Config('f','5p1 5g1')
+fac.Config('f','5p1 5f1')
+fac.Config('f','5p1 5d1')
+fac.Config('f','5p1 4f1')
+
+for i in range (6,catch_shell):
+    fac.Config('f','5p1 %s*1'%(i))
+
+#rad decay of the bound electron 
+fac.Config('f','5s1 %s*1'%(catch_shell))
+fac.Config('f','4d1 %s*1'%(catch_shell))
+
+
+
